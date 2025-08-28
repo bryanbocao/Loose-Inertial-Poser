@@ -678,7 +678,7 @@ class PoseEvaluator:
             t = r6d_to_rotation_matrix(t).reshape(-1, joint_num, 3, 3)
             # t = rotation_matrix_to_axis_angle(t).reshape(-1, joint_num, 3)
 
-            p_full_body = torch.eye(3).reshape(1,1,3,3).repeat(len(p), 24, 1, 1)
+            p_full_body = torch.eye(3).reshape(1, 1, 3, 3).repeat(len(p), 24, 1, 1)
             p_full_body[:, self.index_pose] = p
 
             t_full_body = torch.eye(3).reshape(1, 1, 3, 3).repeat(len(p), 24, 1, 1)
@@ -742,7 +742,7 @@ class PoseEvaluatorWithStd:
                 t = r6d_to_rotation_matrix(t).reshape(-1, joint_num, 3, 3)
                 # t = rotation_matrix_to_axis_angle(t).reshape(-1, joint_num, 3)
 
-                p_full_body = torch.eye(3).reshape(1,1,3,3).repeat(len(p), 24, 1, 1)
+                p_full_body = torch.eye(3).reshape(1, 1, 3, 3).repeat(len(p), 24, 1, 1)
                 p_full_body[:, self.index_pose] = p
 
                 t_full_body = torch.eye(3).reshape(1, 1, 3, 3).repeat(len(p), 24, 1, 1)
